@@ -1,0 +1,463 @@
+<!DOCYTPE html>
+<html><head>
+	<title>Smart Classroom Portal</title>
+	<meta charset="utf-8">
+	<!--<link rel="shortcut icon" href="/favicon.ico">-->
+
+	<link rel="stylesheet" href="static/semantic-ui/css/semantic.min.css">
+	<link rel="stylesheet" href="static/css/style.css">
+
+
+
+</head>
+
+<body class="ui dimmable">
+	<div id="menubar" class="ui fixed inverted menu">
+		<div class="item">
+            پرتال کلاس هوشمند
+		</div>
+
+		<div class="right item">
+             <a href="dashboard.html" style="color:white">
+            <i class="home icon">
+            </i>
+            </a>
+		</div>
+        <div class="right item" onclick="location.href = 'about_us.html' ">
+            درباره ما
+		</div>
+        <div class="right item">
+بهزاد مهرتاش
+		</div>
+	</div>
+
+	<div id="sidebar" class="ui vertical  menu">
+		<a href="" class=" chevron active item" style="margin-top:5px;">  
+    نظرسنجی اساتید
+			<i class="comment icon"></i>
+		</a>
+		<div class="header item">
+			<i class="unlink icon"></i>  لینک‌های سریع
+		</div>
+    <a href="dashboard.html" class="item">
+      داشبورد سیستم
+    </a>
+		<a href="problem_report.html" class="item">
+            ثبت مشکلات
+		</a>
+		<a href="reserve.html" class="item">
+زمان بندی کلاس‌ها
+		</a>
+
+        	<a href="lost.html" class="item">
+اشیای گمشده		</a>
+
+		<div class="header item">
+		<i class="attachment icon"></i>
+            لینک‌های مرتبط
+		</div>
+		<a class="item" href="">
+		آمار گزارش‌ها
+        </a>
+
+	</div>
+
+	<div class="segment">
+		<div class="the-content">
+
+
+<h2 class="ui header">
+	<i class="comment circular icon"></i>
+	<div class="content">
+فرم نظرخواهی از دانشجویان
+  			<!--<div class="sub header">نمای کلی از آخرین وقایع و آمار سیستم</div>-->
+  	</div>
+  	<div class="ui divider"></div>
+</h2>
+
+
+<div class="ui bottom attached active tab stacked segment" data-tab="customer-info">
+  <i class="archive icon"> </i>
+این اطلاعات سه ماه پس از پایان ترم و دریافت نمرات درس توسط اداره آموزش در اختیار استاد قرار خواهد گرفت
+
+	<div class="ui stackable grid">
+		<div class="five column wide">
+			<div class="ui  basic segment">
+                        <div class="ui horizontal section divider"><div class="ui label">انتخاب درس و استاد</div></div>
+                        <div class="ui form">
+                        <div class="field">
+                         <div class="ui fluid search selection dropdown">
+  <input type="hidden" name="courses">
+  <i class="dropdown icon"></i>
+  <div class="default text">انتخاب درس</div>
+  <div class="menu">
+    <div class="item" data-value="HCI">تعامل انسان با رایانه</div>
+    <div class="item" data-value="DA">طراحی الگوریتم</div>
+    <div class="item" data-value="DB">پایگاه داده</div>
+    <div class="item" data-value="DS">ساختار داده</div>
+  </div>
+  </div>
+</div>
+
+
+                            <div class=" field">
+                                <div class="ui selection dropdown">
+                                    <input type="hidden" name="class">
+                                    <div class="default text">انتخاب استاد</div>
+                                    <i class="dropdown icon"></i>
+                                    <div class="menu">
+                                        <div class="item" data-value="0">دکتر نظری</div>
+                                        <div class="item" data-value="1">دکتر آبام</div>
+                                        <div class="item" data-value="2">دکتر جمزاد</div>
+                                        <div class="item" data-value="3">دکتر قدسی</div>
+                                    </div>
+                                 </div>
+                            </div>
+                            <div class="field">
+                                <!--<input type="file">-->
+                            </div>
+                         </div>
+<div class="ui form">
+  <div class="field">
+    <label>
+        نظر دانشجو
+    </label>
+    <textarea></textarea>
+  </div>
+</div>
+				  		<div class="ui right medium labeled icon teal button" id="add-lost">
+                          ثبت فرم
+                                                      <i class="plus icon"></i>
+                        </div>
+			</div>
+
+            <div class="ui small test modal transition hidden" style="margin-top: -98.5px;">
+    <i class="close icon"></i>
+    <div class="header">
+      فرم نظرسنجی
+    </div>
+    <div class="content">
+      <p>
+          نظر شما ثبت شد. با تشکر از همکاری شما
+      </p>
+    </div>
+    <div class="actions">
+
+      <div class="ui positive button">
+      تایید
+        <i class="checkmark icon"></i>
+      </div>
+    </div>
+  </div>
+		</div>
+		<div class="eleven column wide">
+			<div class="ui basic segment">
+				<div class="ui horizontal section divider">
+        <div class="ui label"> فرم نظرسنجی</div>
+        </div>
+            <table class="ui celled structured table" id="lost-table">
+                  <thead>
+                    <tr>
+                      <th rowspan="2">موضوع</th>
+                      <th rowspan="2">عالی</th>
+                      <th rowspan="2">خوب</th>
+                      <th rowspan="2">متوسط</th>
+                      <th rowspan="2">بد</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                   <tr>
+                      <td>
+تسلط استاد به مطالب درس
+                      </td>
+                      <td>
+    <div class="ui checkbox">
+      <input type="checkbox" name="ali1">
+      <label> </label>
+  </div>
+                      </td>
+                      <td>
+<div class="ui checkbox">
+      <input type="checkbox" name="khub1">
+      <label> </label>
+  </div>
+                      </td>
+
+                      <td>
+                          <div class="ui checkbox">
+      <input type="checkbox" name="motevaset1">
+      <label> </label>
+  </div>
+                      </td>
+                      <td>
+                          <div class="ui checkbox">
+      <input type="checkbox" name="bad1">
+      <label> </label>
+  </div>
+                      </td>
+
+                    </tr>
+                    <tr>
+                      <td>
+                          قدرت بیان در تفهیم مطالب درسی
+                      </td>
+                      <td>
+<div class="ui checkbox">
+      <input type="checkbox" name="ali2">
+      <label> </label>
+  </div>
+                      </td>
+                      <td>
+<div class="ui checkbox">
+      <input type="checkbox" name="khub2">
+      <label> </label>
+  </div>
+                      </td>
+                        <td>
+                            <div class="ui checkbox">
+      <input type="checkbox" name="motevaset2">
+      <label> </label>
+  </div>
+                      </td>
+
+                      <td>
+                          <div class="ui checkbox">
+      <input type="checkbox" name="bad2">
+      <label> </label>
+  </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+شیوه تدریس و بکارگیری روشهای مناسب                      </td>
+                      <td>
+                        
+<div class="ui checkbox">
+      <input type="checkbox" name="ali3">
+      <label> </label>
+  </div>
+                      </td>
+                      <td>
+                          <div class="ui checkbox">
+      <input type="checkbox" name="khub3">
+      <label> </label>
+  </div>
+                      </td>
+                      <td>
+                          <div class="ui checkbox">
+      <input type="checkbox" name="motevaset3">
+      <label> </label>
+  </div>
+                      
+                      </td>
+                      <td>
+                          <div class="ui checkbox">
+      <input type="checkbox" name="bad3">
+      <label> </label>
+  </div>
+                      
+                      </td>
+
+                    </tr>
+                    <tr>
+                      <td>
+ارایه برنامه و بیان اهداف کلی درس در شروع درس                      </td>
+                      <td>
+<div class="ui checkbox">
+      <input type="checkbox" name="ali4">
+      <label> </label>
+  </div>
+                      </td>
+                      <td>
+<div class="ui checkbox">
+      <input type="checkbox" name="khub4">
+      <label> </label>
+  </div>
+                      </td>
+
+                      <td>
+                          <div class="ui checkbox">
+      <input type="checkbox" name="motevaset4">
+      <label> </label>
+  </div>
+                      </td>
+                      <td>
+                          <div class="ui checkbox">
+      <input type="checkbox" name="bad4">
+      <label> </label>
+  </div>
+                      </td>
+
+                    </tr>
+                   <tr>
+                      <td>
+رعایت نظم و پیوستگی در ارایه مطلب درس
+                      </td>
+                      <td>
+                          <div class="ui checkbox">
+      <input type="checkbox" name="ali5">
+      <label> </label>
+  </div>
+
+                      </td>
+<td>
+    <div class="ui checkbox">
+      <input type="checkbox" name="khub5">
+      <label> </label>
+  </div>
+
+                      </td>
+                      <td>
+                          <div class="ui checkbox">
+      <input type="checkbox" name="motevaset5">
+      <label> </label>
+  </div>
+                      </td>
+                      <td>
+                          <div class="ui checkbox">
+      <input type="checkbox" name="bad5">
+      <label> </label>
+  </div>
+                      </td>
+
+                    </tr>
+                   <tr>
+                      <td>
+تشکیل منظم کلاسها در طول نیمسال بر طبق برنامه آموزشی                      </td>
+                      <td>
+<div class="ui checkbox">
+      <input type="checkbox" name="hot-deals">
+      <label> </label>
+  </div>
+                      </td>
+<td>
+<div class="ui checkbox">
+      <input type="checkbox" name="hot-deals">
+      <label> </label>
+  </div>
+                      </td>
+                      <td>
+                          <div class="ui checkbox">
+      <input type="checkbox" name="hot-deals">
+      <label> </label>
+  </div>
+                      </td>
+                      <td>
+                          <div class="ui checkbox">
+      <input type="checkbox" name="hot-deals">
+      <label> </label>
+  </div>
+                      </td>
+
+                    </tr>
+                                     <tr>
+                      <td>
+شروع و اتمام منظم و به موقع کلاس در طول نیمسال                      </td>
+                      <td>
+<div class="ui checkbox">
+      <input type="checkbox" name="hot-deals">
+      <label> </label>
+  </div>
+                      </td>
+
+                      <td>
+                          <div class="ui checkbox">
+      <input type="checkbox" name="hot-deals">
+      <label> </label>
+  </div>
+                                         </td>
+                          <td>
+<div class="ui checkbox">
+      <input type="checkbox" name="hot-deals">
+      <label> </label>
+  </div>
+                      </td>
+                      <td>
+                          <div class="ui checkbox">
+      <input type="checkbox" name="hot-deals">
+      <label> </label>
+  </div>
+                      </td>
+
+                    </tr>
+                                     <tr>
+                      <td>
+حضور استاد طبق برنامه تعیین شده برای رفع اشکال و مشاوره                      </td>
+                      <td>
+<div class="ui checkbox">
+      <input type="checkbox" name="hot-deals">
+      <label> </label>
+  </div>
+                      </td>
+
+                      <td>
+                          <div class="ui checkbox">
+      <input type="checkbox" name="hot-deals">
+      <label> </label>
+  </div>
+                      </td>
+                      <td>
+                          <div class="ui checkbox">
+      <input type="checkbox" name="hot-deals">
+      <label> </label>
+  </div>
+                      </td>
+<td>
+<div class="ui checkbox">
+      <input type="checkbox" name="hot-deals">
+      <label> </label>
+  </div>
+                      </td>
+                                     </tr>
+
+
+
+                  </tbody>
+                </table>    
+
+			</div>
+		</div>
+	</div>
+</div>
+
+		</div>
+	</div>
+
+
+	<script type="text/javascript" src="static/javascript/jquery-2.1.0.min.js"></script>
+	<script type="text/javascript" src="static/semantic-ui/javascript/semantic.min.js"></script>
+	<script type="text/javascript"></script>
+
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+    $('.ui.checkbox')
+  .checkbox()
+;
+
+	$('.link').popup({
+		position: 'left center'
+	});
+
+  $('.large.green.checkmark.icon').popup({
+    position: 'left center'
+  });
+
+  $('.popping.item').popup({
+    position: 'left center'
+  });
+
+        $('.ui.dropdown')
+  .dropdown()
+;
+    $("#add-lost").click(function(){
+$('.small.test.modal')
+  .modal('show')
+;    })
+});
+
+</script>
+
+</body>
+</html>
