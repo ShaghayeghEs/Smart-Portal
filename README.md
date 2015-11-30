@@ -12,7 +12,7 @@ Design of a smart web portal in order to solve university classrooms problems an
 
 This project was done throughout a semester in 6 phases.
 
-1. Phase 1: Examinatin => literature studies, questionnaire design and examination of the problem in order to define the problem we were going to research.
+1. Phase 1: Examination => literature studies, questionnaire design and examination of the problem in order to define the problem we were going to research.
 
 2. Phase 2: Definition => Task Analysis, User Research and Context Analysis in order to define the scope and the details of the project using data from interviewing students and professors.
 
